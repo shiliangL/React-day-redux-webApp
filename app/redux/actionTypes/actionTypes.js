@@ -4,4 +4,8 @@ export const UPDATE_CITYNAME = 'UPDATE_CITYNAME'
 export const STORE_UPDATE = 'STORE_UPDATE'
 export const STORE_ADD = 'STORE_ADD'
 export const STORE_RM = 'STORE_RM'
+
 export const ADD_TODO = "ADD_TODO"
+export const SET_VISIBILITY = "SET_VISIBILITY"
+export const TOGGLE_TODO = "TOGGLE_TODO";
+export const DELETE_TODO = "DELETE_TODO";

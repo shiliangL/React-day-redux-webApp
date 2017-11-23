@@ -3,13 +3,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import BarComponent from '../components/BarComponent'
-import Nav from '../components/Nav'
+import NavBar from "./containers/top_nav";
 
 export default class App extends Component {
   render() {
     return (
       <div id="wrapApp">
         <div className="content">
+        <NavBar/>
           <div className="main">
             <div> {this.props.children} </div>
           </div>
