@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RouteMap from './router/RouteMap'
-import { hashHistory } from 'react-router'
-import './static/css/layout.less'
+// import './static/css/layout.less'
+import { Provider } from 'react-redux'
+import { createStore } from "redux";
 
+// todo reducers
+import reducers from "./redux/reducers/index";
+const store = createStore(reducers);
+
+import Index from "./todo/index";
 ReactDOM.render(
-    <RouteMap history={ hashHistory }/>,
-  document.getElementById('content')
+  <Provider store={store}>
+    <Index />
+  </Provider>,
+  document.getElementById("content")
 );
  
