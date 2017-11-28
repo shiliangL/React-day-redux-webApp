@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link }  from 'react-router'
 import HomeHeader from "../../components/HomeHeader/HomeHeader";
+import SiderList from "../../components/siderList/siderList";
+
 export default class Home extends React.Component {
   render() {
     return (
       <div>
         <HomeHeader></HomeHeader>
+        <SiderList/>
         首页
       </div>
     )
