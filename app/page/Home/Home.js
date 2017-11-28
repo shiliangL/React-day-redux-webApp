@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link }  from 'react-router'
-import Sider from '../../components/Sider'
 export default class Home extends React.Component {
   render() {
-
     return (
       <div>
-        <Sider/>
+        首页
       </div>
     )
   }
