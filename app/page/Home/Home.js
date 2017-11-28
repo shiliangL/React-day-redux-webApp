@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link }  from 'react-router'
+import HomeHeader from "../../components/HomeHeader/HomeHeader";
 export default class Home extends React.Component {
   render() {
     return (
       <div>
+        <HomeHeader></HomeHeader>
         首页
       </div>
     )
