@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import { hashHistory } from 'react-router'
  
 import './static/css/layout.less'
+import "./static/css/common.less";
+import "./static/css/font.css";
+
 import { Provider } from 'react-redux'
 import { createStore } from "redux";
 
