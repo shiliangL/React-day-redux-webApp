@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { hashHistory } from "react-router";
-
+import "./style.less";
 export default class NavList extends Component {
   handleClick(item) {
     hashHistory.push(item.path);
