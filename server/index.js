@@ -19,15 +19,29 @@ mongoose.connect(DB_URl).then(
  * 类似于 mysal 的表 mongo 里有文档、字段的概念
  */
 
-//相当于新建了一个表
+//相当于新建了一个表，定义一个表结构
 const User = new mongoose.Schema({ 
     name: {type:String,require:true}, 
     dec: {type:String,require:true},
 });
-//定义一个文档
+const Products = new mongoose.Schema({
+    name: { type: String, require: true },
+});
+//定义一个文档模型
 const UserList = mongoose.model('UserList', User);
+const ProductLIst = mongoose.model('ProductLIst', Products);
 
 UserList.create({
+    name:'shiliangl',
+    dec:'gogoogog12'
+},function (err,doc) {
+    if (err) {
+        console.log('添加错误')
+    }else{
+        console.log('添加成功',doc)
+    }
+})
+ProductLIst.create({
     name:'shiliangl',
     dec:'gogoogog12'
 },function (err,doc) {
