@@ -6,6 +6,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { applyMiddleware, createStore,compose } from 'redux'
 import thunk from 'redux-thunk';
 
+import { Provider } from 'react-redux'
+
 
 function counter(state = 10, action) {
     switch (action.type) {
@@ -25,6 +27,8 @@ const store = createStore(
 )
 
 ReactDOM.render(
-    <App store={store}/>,
+    <Provider store={store}>
+        <App/>
+    </Provider>,
     document.getElementById('root'));
 registerServiceWorker();
