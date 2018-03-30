@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { Button } from 'antd-mobile';
 
-import { createStore } from 'redux'
-
 class App extends Component {
   render() {
+    const { store } = this.props
+    let num = store.getState()
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-          <Button type="primary" size="small" inline>Start</Button>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>内容页面{num}</h1>
+        <Button onClick={() => {
+          // console.log(store.dispatch({type:'ADD'}))
+          store.dispatch(dispatch=>{
+            setTimeout(() => {
+              dispatch({ type: 'ADD' })
+            }, 3000);
+          })
+        }}>登录</Button>
       </div>
     );
   }
