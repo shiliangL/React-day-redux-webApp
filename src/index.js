@@ -1,34 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import './styles/index.scss';
 import registerServiceWorker from './registerServiceWorker';
 import { applyMiddleware, createStore,compose } from 'redux'
 import thunk from 'redux-thunk';
-
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
+import AuthPage  from './view/AuthPage';
+import Dashboard from './view/Dashboard';
 
-function counter(state = 10, action) {
-    switch (action.type) {
-        case 'ADD':
-            return state + 1
-        case 'DEL':
-            return state - 1
-        default:
-            return state;
-    }
-}
+import appReducer from './reducers/index.js'
 const devtool = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 const store = createStore(
-    counter,
+    appReducer,
     devtool,
     compose(applyMiddleware(thunk))
 )
 
 ReactDOM.render(
     <Provider store={store}>
-        <App/>
+        <Router>
+            <div>
+                <Switch>
+                    <Route path='/login' exact component={AuthPage}></Route>
+                    <Route path='/Dashboard' component={Dashboard}></Route>
+                    <Redirect to='/Dashboard'></Redirect>
+                </Switch>
+            </div>
+        </Router>
     </Provider>,
     document.getElementById('root'));
 registerServiceWorker();
+ 
